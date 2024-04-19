@@ -1,4 +1,4 @@
-ValidateConfig > Check if contents are correct datatypes
+﻿ValidateConfig > Check if contents are correct datatypes
 
 Check Config File version to see if new version available to be updated
 >Migration tool for new Config file
@@ -16,9 +16,6 @@ Allow list for valid email sources?
 >email domain + specific emails
 
 Possibly break down Transaction Logs into daily logs?
->If yes, need MasterSheet for account records
-
-Git Hub
 
 If Create and Delete in same request Draft response
 
