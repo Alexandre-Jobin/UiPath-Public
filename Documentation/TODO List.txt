@@ -1,0 +1,29 @@
+ValidateConfig > Check if contents are correct datatypes
+
+Check Config File version to see if new version available to be updated
+>Migration tool for new Config file
+
+Add business exception for User Access Request data mistakes
+>Already have record of user with same Employee ID created (MasterSheet?)
+
+User Guide
+>Include preconditions
+
+Review annotations + name of activities
+Error checking
+
+Allow list for valid email sources?
+>email domain + specific emails
+
+Possibly break down Transaction Logs into daily logs?
+>If yes, need MasterSheet for account records
+
+Git Hub
+
+If Create and Delete in same request Draft response
+
+Change folder structure to be under User
+
+Delete all files within Temporary at startup
+
+If RPA Challenge crash, add Batch to Transaction Log

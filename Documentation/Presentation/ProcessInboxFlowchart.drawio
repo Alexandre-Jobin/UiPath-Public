@@ -1,0 +1,174 @@
+<mxfile host="app.diagrams.net" modified="2024-03-20T12:36:43.385Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0" etag="4y6opwBzmwYa5vIx21hn" version="24.0.7" type="device">
+  <diagram name="Page-1" id="0TSQYhWZiU3ZCPUQ66B-">
+    <mxGraphModel dx="1426" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BjvIwWfCL7ftc54---Ka-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-8" target="BjvIwWfCL7ftc54---Ka-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-8" value="Process Inbox" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="12" y="22.5" width="98" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-21" target="BjvIwWfCL7ftc54---Ka-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-21" value="Get an unprocessed Email from Inbox" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="127.25" y="10" width="71" height="71" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fad9d5;strokeColor=#ae4132;strokeWidth=2;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-23" target="BjvIwWfCL7ftc54---Ka-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-39" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-30">
+          <mxGeometry x="-0.2186" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-23" target="BjvIwWfCL7ftc54---Ka-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-66" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-41">
+          <mxGeometry x="-0.1298" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-23" value="Is it a User&amp;nbsp;&lt;div&gt;Access&amp;nbsp;&lt;/div&gt;&lt;div&gt;Request with attachments?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=default;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="110" y="100" width="108.25" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fad9d5;strokeColor=#ae4132;strokeWidth=2;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-25" target="BjvIwWfCL7ftc54---Ka-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-25" value="Log business exception" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="261.25" y="115" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-26" target="BjvIwWfCL7ftc54---Ka-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-26" value="Email is considered processed and moved to different folder" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="399.25" y="115" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffcd28;gradientColor=#ffa500;strokeColor=#d79b00;strokeWidth=2;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-28" target="BjvIwWfCL7ftc54---Ka-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-35" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-33">
+          <mxGeometry x="-0.9001" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-28" target="BjvIwWfCL7ftc54---Ka-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-38" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-37">
+          <mxGeometry x="-0.5764" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-28" value="Are there any emails left unprocessed?" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=default;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="538.25" y="100" width="108.25" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-36" value="Wait for new Emails" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="748.25" y="122" width="90" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-64" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-40" target="BjvIwWfCL7ftc54---Ka-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-40" value="Download attachments" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="108.25" y="220" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-44" target="BjvIwWfCL7ftc54---Ka-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-44" value="Get an unprocessed attachment from folder" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="261.37" y="210" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-49" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;gradientColor=#ea6b66;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-45" target="BjvIwWfCL7ftc54---Ka-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-54" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-49">
+          <mxGeometry x="-0.0908" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-45" target="BjvIwWfCL7ftc54---Ka-62">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="316.37" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-59" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-58">
+          <mxGeometry x="-0.4155" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-45" value="Does it have the correct format and extension?" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=default;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="261.25" y="290" width="108.25" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-48" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;gradientColor=#ea6b66;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-46" target="BjvIwWfCL7ftc54---Ka-47">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-46" value="Log business exception" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="413.87" y="305" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-47" target="BjvIwWfCL7ftc54---Ka-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-47" value="Attachment is considered processed and is deleted" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="551.87" y="305" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fillColor=#ffcd28;strokeColor=#d79b00;strokeWidth=2;gradientColor=#ffa500;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-51" target="BjvIwWfCL7ftc54---Ka-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-67" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-52">
+          <mxGeometry x="-0.8867" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-51" target="BjvIwWfCL7ftc54---Ka-26">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="819.25" y="335" />
+              <mxPoint x="819.25" y="210" />
+              <mxPoint x="454.25" y="210" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-68" value="No" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="BjvIwWfCL7ftc54---Ka-53">
+          <mxGeometry x="-0.8638" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-51" value="Are there any attachments left unprocessed?" style="rhombus;whiteSpace=wrap;html=1;labelBackgroundColor=default;labelBorderColor=none;" vertex="1" parent="1">
+          <mxGeometry x="690.87" y="290" width="108.25" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=3;" edge="1" parent="1" source="BjvIwWfCL7ftc54---Ka-62" target="BjvIwWfCL7ftc54---Ka-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="376.37" y="440" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-62" value="Create Draft Emails" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270.37" y="413" width="90" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-77" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="29.130000000000003" y="320" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-69" value="Happy Path" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="69.13" y="320" width="70.88" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-70" value="Unhappy Path" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="69.13" y="382" width="90.88" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-71" value="Neutral Path" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="69.13" y="350" width="70.88" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-73" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#B85450;gradientColor=none;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="39.13" y="387" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-74" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#D79B00;gradientColor=none;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="39.13" y="355" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="BjvIwWfCL7ftc54---Ka-75" value="" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;gradientColor=#97d077;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="39.13" y="325" width="20" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

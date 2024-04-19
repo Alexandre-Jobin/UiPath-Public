@@ -1,0 +1,533 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ProcessUserAccessRequest" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Mail" Type="InArgument(snm:MailMessage)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="inOut_dt_TransactionLog" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_Browser" Type="InArgument(ui:Browser)" />
+    <x:Property Name="inOut_dt_Master" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1316.8,5565.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ProcessUserAccessRequest_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>UiPath.Mail.Activities.Business.ForEachMail</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Mail.Activities.Utils</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>Microsoft.Exchange.WebServices.Data</x:String>
+      <x:String>UiPath.Mail.Exchange</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.Outlook.Activities</x:String>
+      <x:String>UiPath.Core.Activities.TextModifications</x:String>
+      <x:String>UiPath.Activities.System.Workflow.Business</x:String>
+      <x:String>Org.BouncyCastle.Security</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>BouncyCastle.Crypto</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Process individual User Access Requests." DisplayName="ProcessUserAccessRequest" sap:VirtualizedContainerService.HintSize="1327.2,5500.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[new DataTable()]" Name="dt_CurrentTransaction" />
+      <Variable x:TypeArguments="s:String[]" Name="AttachmentColumnHeaders" />
+      <Variable x:TypeArguments="s:String[]" Default="[new String() {&quot;Action&quot;, &quot;First Name&quot;, &quot;Given Name&quot;, &quot;User ID&quot;, &quot;Email Address&quot;, &quot;Employee ID&quot;, &quot;Need Elevated Access&quot;, &quot;Clearance Granted&quot;, &quot;Exempt from clearance check&quot;}]" Name="ExpectedColumnHeaders" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <umab:OutlookApplicationCard Account="in_Config(&quot;OutlookEmailAccount&quot;).ToString" AccountMismatchBehavior="UseDefaultEmailAccount" DisplayName="Use Desktop Outlook App" sap:VirtualizedContainerService.HintSize="1264.8,5357.6" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+      <umab:OutlookApplicationCard.Body>
+        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1231.2,5176" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="EmailAttachments" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <umab:SaveMailAttachmentsX Attachments="[EmailAttachments]" DisplayName="Save Email Attachments" ExcludeInlineAttachments="True" FolderPath="Data\Temporary" sap:VirtualizedContainerService.HintSize="1168.8,229.6" sap2010:WorkflowViewState.IdRef="SaveMailAttachmentsX_1" Message="[in_Mail]" OverwriteExisting="True" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Generate Active Transaction Data Table" sap:VirtualizedContainerService.HintSize="1168.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Generate_ActiveTransactionDataTable.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each attached file downloaded from mail" sap:VirtualizedContainerService.HintSize="1168.8,3724.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[EmailAttachments]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="currentFile" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1133.6,3600" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dt_UserAccessRequests" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[Path.GetFullPath(currentFile).Split(&quot;.&quot;).Last=&quot;xlsx&quot;]" DisplayName="If attachment extension is &quot;xlsx&quot;" sap:VirtualizedContainerService.HintSize="1071.2,3367.2" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <TryCatch DisplayName="Try to read data from xlsx attachment" sap:VirtualizedContainerService.HintSize="993.6,2963.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <TryCatch.Try>
+                            <Sequence sap:VirtualizedContainerService.HintSize="956.8,2732" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_UserAccessRequests]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="894.4,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[Path.GetFullPath(currentFile)]" />
+                              <ui:MultipleAssign DisplayName="Convert headers into String arrays for comparison" sap:VirtualizedContainerService.HintSize="894.4,101.6" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                <ui:MultipleAssign.AssignOperations>
+                                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                      <ui:AssignOperation.To>
+                                        <OutArgument x:TypeArguments="s:String[]">[AttachmentColumnHeaders]</OutArgument>
+                                      </ui:AssignOperation.To>
+                                      <ui:AssignOperation.Value>
+                                        <InArgument x:TypeArguments="s:String[]">[(from dc in dt_UserAccessRequests.Columns.Cast(of DataColumn)select dc.ColumnName).ToArray]</InArgument>
+                                      </ui:AssignOperation.Value>
+                                    </ui:AssignOperation>
+                                  </scg:List>
+                                </ui:MultipleAssign.AssignOperations>
+                              </ui:MultipleAssign>
+                              <If Condition="[AttachmentColumnHeaders.Except(ExpectedColumnHeaders).Count = 0 AND ExpectedColumnHeaders.Except(AttachmentColumnHeaders).Count = 0]" DisplayName="If column headers from attachment match expected format" sap:VirtualizedContainerService.HintSize="894.4,2350.4" sap2010:WorkflowViewState.IdRef="If_11">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="816.8,1813.6" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_UserAccessRequests]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="754.4,1701.6" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+                                      <ui:ForEachRow.Body>
+                                        <ActivityAction x:TypeArguments="sd:DataRow">
+                                          <ActivityAction.Argument>
+                                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                                          </ActivityAction.Argument>
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="720.8,1585.6" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                            <Sequence.Variables>
+                                              <Variable x:TypeArguments="x:String" Name="TemporaryPassword" />
+                                            </Sequence.Variables>
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If Condition="[CurrentRow(&quot;Clearance Granted&quot;).ToString.ToLower = &quot;yes&quot; Or CurrentRow(&quot;Exempt from clearance check&quot;).ToString.ToLower = &quot;yes&quot; Or CurrentRow(&quot;Clearance Granted&quot;).ToString.ToLower = &quot;n/a&quot;]" DisplayName="If Clearance is granted, is not required, or if is N/A" sap:VirtualizedContainerService.HintSize="658.4,1473.6" sap2010:WorkflowViewState.IdRef="If_12">
+                                              <If.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="580.8,936.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                  <Sequence.Variables>
+                                                    <Variable x:TypeArguments="x:Boolean" Name="ValidRequest" />
+                                                    <Variable x:TypeArguments="x:String" Name="ConflictMessage" />
+                                                  </Sequence.Variables>
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Validate Transaction with Master" sap:VirtualizedContainerService.HintSize="518.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="UserAccessRequest\Validate_TransactionWithMaster.xaml">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Valid">[ValidRequest]</OutArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[CurrentRow("First Name").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[CurrentRow("Given Name").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_Master">[inOut_dt_Master]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">[CurrentRow("Employee ID").ToString]</InArgument>
+                                                      <OutArgument x:TypeArguments="x:String" x:Key="out_ConflictMessage">[ConflictMessage]</OutArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_Action">[CurrentRow("Action").ToString]</InArgument>
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                  </ui:InvokeWorkflowFile>
+                                                  <If Condition="[ValidRequest = True]" DisplayName="If transaction is validated through Master" sap:VirtualizedContainerService.HintSize="518.4,671.2" sap2010:WorkflowViewState.IdRef="If_14">
+                                                    <If.Then>
+                                                      <Sequence sap:VirtualizedContainerService.HintSize="440.8,379.2" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Expand Active Transaction" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Expand_ActiveTransaction.xaml">
+                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Info">Completed</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailStatus">Draft Created</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_BatchType">User Access Request</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Mail.From.ToString.Split("&lt;").Last.Split("&gt;").First]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Action">[CurrentRow("Action").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_UserID">[CurrentRow("User ID").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">[CurrentRow("Employee ID").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionEntry">[dt_CurrentTransaction]</InArgument>
+                                                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                        </ui:InvokeWorkflowFile>
+                                                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Update Master" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="MasterManipulation\Update_Master.xaml">
+                                                          <ui:InvokeWorkflowFile.Arguments>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Action">[CurrentRow("Action").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">[CurrentRow("Employee ID").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[CurrentRow("First Name").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[CurrentRow("Given Name").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_UserID">[CurrentRow("User ID").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_EmailAddress">[CurrentRow("Email Address").ToString]</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_AccessLevel">[CurrentRow("Need Elevated Access").ToString]</InArgument>
+                                                            <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inOut_dt_Master">[inOut_dt_Master]</InOutArgument>
+                                                          </ui:InvokeWorkflowFile.Arguments>
+                                                        </ui:InvokeWorkflowFile>
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Expand Active Transaction" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Expand_ActiveTransaction.xaml">
+                                                        <ui:InvokeWorkflowFile.Arguments>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Info">[ConflictMessage]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_EmailStatus">Not Created</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_BatchType">[in_Config("UserAccessRequest").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Mail.From.ToString.Split("&lt;").Last.Split("&gt;").First]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_Action">[CurrentRow("Action").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_UserID">[CurrentRow("User ID").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">[CurrentRow("Employee ID").ToString]</InArgument>
+                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionEntry">[dt_CurrentTransaction]</InArgument>
+                                                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+                                                        </ui:InvokeWorkflowFile.Arguments>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:InvokeWorkflowFile>
+                                                    </If.Else>
+                                                  </If>
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence DisplayName="Else skip draft creation for row and Continue" sap:VirtualizedContainerService.HintSize="440.8,358.4" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <ui:LogMessage DisplayName="Business exception log - insuficient permissions" sap:VirtualizedContainerService.HintSize="378.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Error" Message="[&quot;BE07: Account creation request denied. User &quot; + CurrentRow(&quot;User ID&quot;).ToString + &quot; does not have clearance and is not exempt&quot;]" />
+                                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Expand_ActiveTransaction.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Expand_ActiveTransaction.xaml">
+                                                    <ui:InvokeWorkflowFile.Arguments>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_Info">User does not have clearance or exemption</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailStatus">Not Created</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_BatchType">[in_Config("UserAccessRequest").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Mail.From.ToString.Split("&lt;").Last.Split("&gt;").First]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_Action">[CurrentRow("Action").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_UserID">[CurrentRow("User ID").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">[CurrentRow("Employee ID").ToString]</InArgument>
+                                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionEntry">[dt_CurrentTransaction]</InArgument>
+                                                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+                                                    </ui:InvokeWorkflowFile.Arguments>
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </ui:InvokeWorkflowFile>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                        </ActivityAction>
+                                      </ui:ForEachRow.Body>
+                                    </ui:ForEachRow>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="440.8,358.4" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Business exception log - bad formatting" sap:VirtualizedContainerService.HintSize="378.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;BE05: xlsx file formatting does not match Transaction Log&quot;]" />
+                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Expand_ActiveTransaction.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Expand_ActiveTransaction.xaml">
+                                      <ui:InvokeWorkflowFile.Arguments>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Info">Attachment column format incorrect</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_EmailStatus">Not Created</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_BatchType">[in_Config("UserAccessRequest").ToString]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Mail.From.ToString.Split("&lt;").Last.Split("&gt;").First]</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_Action">N/A</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_UserID">N/A</InArgument>
+                                        <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">N/A</InArgument>
+                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionEntry">[dt_CurrentTransaction]</InArgument>
+                                        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+                                      </ui:InvokeWorkflowFile.Arguments>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                    </ui:InvokeWorkflowFile>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="960,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="440.8,358.4" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="378.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;BE06: Failed to extract data from xlsx file&quot;]" />
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Expand_ActiveTransaction.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Expand_ActiveTransaction.xaml">
+                                    <ui:InvokeWorkflowFile.Arguments>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Info">Could not extract datatable from xlsx</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmailStatus">Not Created</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_BatchType">[in_Config("UserAccessRequest").ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Mail.From.ToString]</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_Action">N/A</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_UserID">N/A</InArgument>
+                                      <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">N/A</InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionEntry">[dt_CurrentTransaction]</InArgument>
+                                      <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+                                    </ui:InvokeWorkflowFile.Arguments>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:InvokeWorkflowFile>
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence sap:VirtualizedContainerService.HintSize="440.8,225.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Expand_ActiveTransaction.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="378.4,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Expand_ActiveTransaction.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Info">Attachment was not a xlsx file</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_EmailStatus">Not Created</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_BatchType">[in_Config("UserAccessRequest").ToString]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Source">[in_Mail.From.ToString.Split("&lt;").Last.Split("&gt;").First]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Action">N/A</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_UserID">N/A</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_EmployeeID">N/A</InArgument>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_TransactionEntry">[dt_CurrentTransaction]</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_TransactionEntry">[dt_CurrentTransaction]</OutArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:DeleteFileX DisplayName="Delete temporary file once processed" sap:VirtualizedContainerService.HintSize="1071.2,80.8" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[Path.GetFullPath(currentFile)]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+            <If sap2010:Annotation.AnnotationText="If RPA Challenge flag is set to true, insert the data from the User Access Request to the RPA Challenge website." Condition="[in_Config(&quot;RPAChallengeFlag&quot;).ToString.ToLower=&quot;true&quot;]" DisplayName="If RPA Challenge Flag setting is TRUE" sap:VirtualizedContainerService.HintSize="1168.8,548" sap2010:WorkflowViewState.IdRef="If_10">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,225.6" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Input RPA Challenge" sap:VirtualizedContainerService.HintSize="337.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="RPAChallenge\Input_RPAChallenge.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="in_CurrentTransaction">[dt_CurrentTransaction]</InArgument>
+                      <InOutArgument x:TypeArguments="ui:Browser" x:Key="inOut_Browser">[in_Browser]</InOutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="400,83.2" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <umab:MoveMailX DisplayName="Once processed, move Email to another folder" sap:VirtualizedContainerService.HintSize="1168.8,134.4" sap2010:WorkflowViewState.IdRef="MoveMailX_1" MailFolder="[in_Config(&quot;UserAccessRequest&quot;).ToString]" MailMessage="[in_Mail]" />
+            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AddTransactionBatchToLog workflow" sap:VirtualizedContainerService.HintSize="1168.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="TransactionLogManipulation\Append_TransactionBatchToLog.xaml">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dt_CurrentTransaction">[dt_CurrentTransaction]</InArgument>
+                <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inOut_dt_TransactionLog">[inOut_dt_TransactionLog]</InOutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InvokeWorkflowFile>
+          </Sequence>
+        </ActivityAction>
+      </umab:OutlookApplicationCard.Body>
+    </umab:OutlookApplicationCard>
+  </Sequence>
+</Activity>

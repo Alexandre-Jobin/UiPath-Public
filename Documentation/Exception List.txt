@@ -1,0 +1,17 @@
+BE01: Failed to download Config file
+BE02: Failed to download Transaction Log file
+BE03: Email had no attachments
+BE04: Email extension was not a xlsx file
+BE05: xlsx file formatting does not match Transaction Log
+BE06: Failed to extract data from xlsx file
+BE07: Account creation request denied. User does not have clearance and is not exempt
+BE08: Browser failed to respond.
+BE09: Repeated failed attempts to input values into RPA Challenge website
+BE10: Failed to download Master Sheet
+BE11: Account already exists
+BE12: Modification failed. No account found
+BE13: Deletion failed. No account found
+BE14: Invalid account action requested
+
+Example Log Message:
+"BE03: User Access Request had no attachment"
